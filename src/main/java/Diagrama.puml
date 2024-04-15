@@ -1,0 +1,38 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface Elemento {
+    double getPrecio()
+    int getCodigo()
+}
+
+class ElementoConcreto {
+    int codigo
+    double precio
+    double getPrecio()
+    int getCodigo()
+}
+
+class ContenedorElementos {
+    int codigo
+    List<Elemento> elementos
+    int getCodigo()
+    List<Elemento> getElementos()
+}
+
+class SistemaGestion {
+    Scanner scanner
+    ContenedorElementos contenedorPrincipal
+    void main(String[] args)
+    void agregarElemento()
+    void eliminarElemento()
+    void mostrarElementos()
+    void mostrarPrecioTotal()
+}
+
+Elemento <|.. ElementoConcreto
+ContenedorElementos ..> Elemento
+SistemaGestion ..> ContenedorElementos
+SistemaGestion ..> ElementoConcreto
+
+@enduml
