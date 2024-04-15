@@ -27,4 +27,7 @@ class ContenedorElementos implements Elemento {
     public int getCodigo() {
         return codigo;
     }
+    public List<Elemento> getElementos() {
+        return new ArrayList<>(elementos); // Devuelve una copia segura de la lista
+    }
 }
